@@ -8,11 +8,11 @@ RSpec.describe Api::V1::PerformanceDataController, type: :request do
       post '/api/v1/performance_data', params: {
         performance_data: { data: { message: 'Average' } }
       }, headers: headers
-      binding.pry
 
       entry = PerformanceData.last
       expect(entry.data).to eq 'message' => 'Average'
     end
+  end
 
     describe 'GET /api/v1/performance_data' do
       before do
@@ -25,4 +25,3 @@ RSpec.describe Api::V1::PerformanceDataController, type: :request do
       end
     end
   end
-end
