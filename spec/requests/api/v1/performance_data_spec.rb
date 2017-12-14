@@ -6,7 +6,7 @@ RSpec.describe Api::V1::PerformanceDataController, type: :request do
   describe 'POST /api/v1/performance_data' do
     it 'creates a data entry' do
       post '/api/v1/performance_data', params: {
-        performance_data: { data: { message: 'Average' } }
+        performance_data: { data: { message: 'Average' }, user_id: user.id}
       }, headers: headers
 
       entry = PerformanceData.last
