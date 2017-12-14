@@ -35,7 +35,7 @@ RSpec.describe 'User Registration', type: :request do
       expect(response.status).to eq 422    end
 
     it 'an already registered email' do
-      FactoryGirl.create(:user, email: 'example@craftacademy.se',
+      FactoryBot.create(:user, email: 'example@craftacademy.se',
                                 password: 'password',
                                 password_confirmation: 'password')
 
